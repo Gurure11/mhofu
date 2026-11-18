@@ -4,50 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MineLink · mining properties</title>
-  <!-- Google Fonts & FontAwesome -->
+  <!-- Google Fonts & FontAwesome for clean icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ===== THEME: BLUE & LIME GREEN ===== */
-    :root {
-      --blue-deep: #0a2e4e;
-      --blue-main: #1b4a6b;
-      --blue-soft: #2b6a8f;
-      --blue-light: #d4e7f5;
-      --lime: #a3e635;
-      --lime-dark: #84cc16;
-      --lime-glow: rgba(163, 230, 53, 0.25);
-      --white: #ffffff;
-      --off-white: #f5f9ff;
-      --gray-100: #eef4fa;
-      --gray-200: #dae5ef;
-      --gray-500: #5f7d9a;
-      --gray-700: #2c4a62;
-      --shadow-sm: 0 4px 12px rgba(10, 46, 78, 0.06);
-      --shadow-md: 0 12px 28px rgba(10, 46, 78, 0.08);
-      --shadow-lg: 0 24px 48px rgba(10, 46, 78, 0.12);
-      --radius-card: 24px;
-      --radius-btn: 40px;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--off-white);
-      color: var(--blue-deep);
+      background-color: #f7f9fc;
+      color: #1e2b3c;
       line-height: 1.5;
-      overflow-x: hidden;
     }
 
     .container {
@@ -56,15 +29,15 @@
       padding: 0 24px;
     }
 
-    /* ===== NAVBAR ===== */
+    /* header / nav */
     .navbar {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      padding: 14px 0;
-      border-bottom: 1px solid var(--gray-200);
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      padding: 16px 0;
+      border-bottom: 1px solid #e9eef2;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
     }
 
     .nav-inner {
@@ -77,16 +50,16 @@
 
     .logo {
       font-size: 1.8rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: -0.02em;
-      color: var(--blue-deep);
+      color: #1a3b4e;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
     .logo i {
-      color: var(--lime-dark);
+      color: #d97706;
       font-size: 2rem;
     }
 
@@ -94,254 +67,72 @@
       display: flex;
       gap: 12px;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .btn {
       border: none;
       padding: 10px 22px;
-      border-radius: var(--radius-btn);
+      border-radius: 40px;
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
       transition: all 0.2s;
+      background: white;
+      color: #1e2b3c;
+      border: 1px solid #d0d9e2;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: inherit;
-      text-decoration: none;
     }
 
     .btn-primary {
-      background: var(--blue-main);
+      background: #1e3b4f;
       color: white;
-      border: 1px solid var(--blue-main);
+      border: 1px solid #1e3b4f;
     }
 
     .btn-primary:hover {
-      background: var(--blue-deep);
-      border-color: var(--blue-deep);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--blue-deep);
-      border: 1px solid var(--gray-200);
+      background: #0f2b3b;
     }
 
     .btn-outline:hover {
-      background: var(--gray-100);
+      background: #f0f4f9;
     }
 
-    .btn-lime {
-      background: var(--lime);
-      border: 1px solid var(--lime);
-      color: var(--blue-deep);
-      font-weight: 700;
-    }
-
-    .btn-lime:hover {
-      background: var(--lime-dark);
-      border-color: var(--lime-dark);
+    .btn-accent {
+      background: #d97706;
+      border-color: #d97706;
       color: white;
+    }
+
+    .btn-accent:hover {
+      background: #b85e05;
     }
 
     .user-badge {
       display: flex;
       align-items: center;
       gap: 8px;
-      background: var(--blue-light);
+      background: #eef3f8;
       padding: 6px 16px 6px 12px;
-      border-radius: var(--radius-btn);
+      border-radius: 40px;
       font-weight: 500;
       font-size: 0.9rem;
-      color: var(--blue-deep);
     }
 
-    .logged-in-info {
-      display: none;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logged-in-info.active {
-      display: flex;
-    }
-
-    .logged-out.active {
-      display: flex;
-    }
-
-    .logged-out {
-      display: none;
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-      position: relative;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      overflow: hidden;
-      padding: 60px 0;
-    }
-
-    .hero-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(10, 46, 78, 0.85) 0%, rgba(27, 74, 107, 0.7) 50%, rgba(10, 46, 78, 0.9) 100%);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 820px;
-      padding: 0 24px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(163, 230, 53, 0.18);
-      border: 1px solid var(--lime);
-      color: var(--lime);
-      padding: 6px 20px;
-      border-radius: var(--radius-btn);
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      backdrop-filter: blur(8px);
-      animation: fadeInUp 0.8s ease both;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.6rem, 6vw, 4.2rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.08;
-      margin-bottom: 20px;
-      animation: fadeInUp 0.8s 0.1s ease both;
-    }
-
-    .hero h1 .highlight {
-      color: var(--lime);
-      display: inline-block;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 600px;
-      margin: 0 auto 36px;
-      animation: fadeInUp 0.8s 0.2s ease both;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeInUp 0.8s 0.3s ease both;
-    }
-
-    .hero-actions .btn {
-      padding: 16px 36px;
-      font-size: 1.05rem;
-    }
-
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin-top: 60px;
-      animation: fadeInUp 0.8s 0.45s ease both;
-      flex-wrap: wrap;
-    }
-
-    .hero-stat h3 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--lime);
-    }
-
-    .hero-stat p {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 0;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-    }
-
-    /* Floating mine icons animation */
-    .floating-icons {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .floating-icons i {
-      position: absolute;
-      color: rgba(163, 230, 53, 0.12);
-      font-size: 3rem;
-      animation: floatIcon 8s ease-in-out infinite;
-    }
-
-    .floating-icons i:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; font-size: 4rem; }
-    .floating-icons i:nth-child(2) { top: 70%; left: 15%; animation-delay: 1.5s; font-size: 3.5rem; }
-    .floating-icons i:nth-child(3) { top: 25%; right: 10%; animation-delay: 0.8s; font-size: 5rem; }
-    .floating-icons i:nth-child(4) { top: 80%; right: 18%; animation-delay: 2.2s; font-size: 3rem; }
-    .floating-icons i:nth-child(5) { top: 50%; left: 50%; animation-delay: 3s; font-size: 6rem; opacity: 0.07; }
-
-    @keyframes floatIcon {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(8deg); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ===== SEARCH SECTION ===== */
+    /* search & filter section */
     .search-section {
-      background: var(--white);
-      border-radius: 32px;
+      background: white;
+      border-radius: 30px;
       padding: 20px 24px;
-      margin: -40px auto 24px;
-      position: relative;
-      z-index: 5;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--gray-200);
+      margin: 28px 0 24px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9eef2;
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
       align-items: center;
       justify-content: space-between;
-      max-width: 900px;
     }
 
     .search-wrapper {
@@ -349,14 +140,14 @@
       min-width: 260px;
       display: flex;
       align-items: center;
-      background: var(--gray-100);
-      border-radius: var(--radius-btn);
+      background: #f4f8fe;
+      border-radius: 40px;
       padding: 4px 8px 4px 20px;
-      border: 1px solid var(--gray-200);
+      border: 1px solid #dae2ec;
     }
 
     .search-wrapper i {
-      color: var(--gray-500);
+      color: #5e7a93;
       font-size: 1.1rem;
     }
 
@@ -368,7 +159,6 @@
       font-size: 1rem;
       outline: none;
       font-family: inherit;
-      color: var(--blue-deep);
     }
 
     .filter-group {
@@ -380,73 +170,64 @@
 
     .filter-select {
       padding: 12px 20px;
-      border-radius: var(--radius-btn);
-      border: 1px solid var(--gray-200);
-      background: var(--white);
+      border-radius: 40px;
+      border: 1px solid #dae2ec;
+      background: white;
       font-family: inherit;
       font-size: 0.95rem;
       font-weight: 500;
-      color: var(--blue-deep);
+      color: #1e2b3c;
       outline: none;
       cursor: pointer;
       min-width: 160px;
     }
 
-    /* ===== LISTING GRID ===== */
+    /* listing grid */
     .listing-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
-      margin-top: 48px;
     }
 
     .listing-header h2 {
-      font-size: 1.8rem;
-      font-weight: 800;
+      font-size: 1.6rem;
+      font-weight: 700;
       letter-spacing: -0.02em;
-      color: var(--blue-deep);
     }
 
     .listing-header span {
-      color: var(--gray-500);
+      color: #5e7a93;
       font-weight: 500;
       font-size: 0.95rem;
     }
 
     .mines-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 28px;
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
 
     .mine-card {
-      background: var(--white);
-      border-radius: var(--radius-card);
+      background: white;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray-200);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e6ecf3;
+      transition: transform 0.2s, box-shadow 0.2s;
       display: flex;
       flex-direction: column;
-      animation: cardFadeIn 0.5s ease both;
-    }
-
-    @keyframes cardFadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .mine-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--lime);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.06);
     }
 
     .card-image {
-      height: 210px;
-      background: var(--blue-light);
+      height: 200px;
+      background: #d9e2ec;
       position: relative;
       overflow: hidden;
     }
@@ -456,21 +237,16 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .mine-card:hover .card-image img {
-      transform: scale(1.06);
     }
 
     .image-count {
       position: absolute;
       bottom: 12px;
       right: 12px;
-      background: rgba(10, 46, 78, 0.75);
+      background: rgba(0, 0, 0, 0.6);
       color: white;
       padding: 4px 12px;
-      border-radius: var(--radius-btn);
+      border-radius: 40px;
       font-size: 0.8rem;
       font-weight: 600;
       backdrop-filter: blur(4px);
@@ -484,25 +260,22 @@
     }
 
     .mine-title {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 6px;
-      color: var(--blue-deep);
+      color: #0f2b3b;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       gap: 8px;
     }
 
     .price {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--blue-main);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #d97706;
       white-space: nowrap;
-      background: var(--blue-light);
-      padding: 2px 12px;
-      border-radius: 30px;
     }
 
     .location {
@@ -510,17 +283,21 @@
       align-items: center;
       gap: 6px;
       font-size: 0.9rem;
-      color: var(--gray-500);
+      color: #5e7a93;
       margin-bottom: 12px;
     }
 
+    .location i {
+      font-size: 0.8rem;
+    }
+
     .coords {
-      background: var(--gray-100);
-      padding: 6px 14px;
+      background: #f0f5fb;
+      padding: 6px 12px;
       border-radius: 30px;
       font-size: 0.8rem;
       font-weight: 500;
-      color: var(--blue-deep);
+      color: #1e3b4f;
       margin-bottom: 14px;
       display: inline-block;
       align-self: flex-start;
@@ -528,34 +305,34 @@
     }
 
     .contact-info {
-      margin-top: auto;
+      margin-top: 12px;
       padding-top: 14px;
-      border-top: 1px solid var(--gray-200);
+      border-top: 1px solid #e6ecf3;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 16px;
+      gap: 14px 18px;
       font-size: 0.85rem;
+      color: #3a5468;
     }
 
-    .contact-info a,
-    .contact-info span {
+    .contact-info a, .contact-info span {
       display: flex;
       align-items: center;
       gap: 6px;
       text-decoration: none;
-      color: var(--blue-deep);
+      color: #1e3b4f;
       font-weight: 500;
       transition: color 0.15s;
     }
 
     .contact-info a:hover {
-      color: var(--lime-dark);
+      color: #d97706;
     }
 
     .whatsapp-link {
       background: #e6f7eb;
       padding: 4px 12px;
-      border-radius: var(--radius-btn);
+      border-radius: 30px;
       color: #0e6b3b !important;
       font-weight: 600;
     }
@@ -564,44 +341,22 @@
       color: #0e6b3b;
     }
 
-    .demo-banner {
-      background: var(--lime);
-      color: var(--blue-deep);
-      text-align: center;
-      padding: 10px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border-radius: 30px;
-      margin-bottom: 24px;
-      display: none;
-    }
-
-    .demo-banner.active {
-      display: block;
-    }
-
     .empty-state {
       text-align: center;
       padding: 60px 20px;
-      background: var(--white);
+      background: white;
       border-radius: 32px;
-      border: 2px dashed var(--gray-200);
+      border: 1px dashed #bdd1e2;
       grid-column: 1 / -1;
     }
 
-    .empty-state i {
-      font-size: 2.5rem;
-      color: var(--gray-200);
-      margin-bottom: 16px;
-    }
-
-    /* ===== MODALS ===== */
+    /* Modals */
     .modal {
       display: none;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(10, 46, 78, 0.5);
-      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
       align-items: center;
       justify-content: center;
       z-index: 1000;
@@ -613,21 +368,15 @@
     }
 
     .modal-content {
-      background: var(--white);
+      background: white;
       border-radius: 36px;
-      max-width: 580px;
+      max-width: 560px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      padding: 32px 34px;
-      box-shadow: var(--shadow-lg);
+      padding: 30px 32px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
       position: relative;
-      animation: modalIn 0.25s ease;
-    }
-
-    @keyframes modalIn {
-      from { opacity: 0; transform: scale(0.96) translateY(10px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
     .modal-header {
@@ -639,26 +388,17 @@
 
     .modal-header h3 {
       font-size: 1.8rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: -0.02em;
-      color: var(--blue-deep);
     }
 
     .close-modal {
-      background: var(--gray-100);
+      background: none;
       border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      color: var(--gray-500);
+      color: #5e7a93;
       line-height: 1;
-      transition: background 0.15s;
-    }
-
-    .close-modal:hover {
-      background: var(--gray-200);
     }
 
     .form-group {
@@ -670,28 +410,23 @@
       font-weight: 600;
       font-size: 0.9rem;
       margin-bottom: 6px;
-      color: var(--blue-deep);
+      color: #1e3b4f;
     }
 
-    .form-group input,
-    .form-group textarea {
+    .form-group input, .form-group textarea {
       width: 100%;
       padding: 14px 16px;
       border-radius: 16px;
-      border: 1px solid var(--gray-200);
+      border: 1px solid #d0ddee;
       font-family: inherit;
       font-size: 0.95rem;
-      background: var(--gray-100);
+      background: #fafcff;
       outline: none;
-      transition: border 0.15s, background 0.15s;
-      color: var(--blue-deep);
+      transition: border 0.15s;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--lime-dark);
-      background: var(--white);
-      box-shadow: 0 0 0 3px var(--lime-glow);
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #1e3b4f;
     }
 
     .form-row {
@@ -702,7 +437,7 @@
 
     .image-hint {
       font-size: 0.8rem;
-      color: var(--gray-500);
+      color: #5e7a93;
       margin-top: 6px;
     }
 
@@ -714,18 +449,24 @@
       border-radius: 30px;
     }
 
-    /* ===== TOAST ===== */
+    .error-msg {
+      color: #b91c1c;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      display: none;
+    }
+
     .toast {
       position: fixed;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--blue-deep);
+      background: #1e2b3c;
       color: white;
       padding: 14px 32px;
-      border-radius: var(--radius-btn);
+      border-radius: 60px;
       font-weight: 500;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
       z-index: 2000;
       opacity: 0;
       transition: opacity 0.25s;
@@ -736,22 +477,41 @@
       opacity: 1;
     }
 
-    .toast.error {
-      background: #b91c1c;
+    /* user status */
+    .logged-in-info {
+      display: none;
+      align-items: center;
+      gap: 12px;
     }
 
-    /* ===== LOADER ===== */
+    .logged-in-info.active {
+      display: flex;
+    }
+
+    .auth-buttons .logged-out.active {
+      display: flex;
+    }
+
+    .logged-out {
+      display: none;
+    }
+
+    .logged-out.active {
+      display: flex;
+    }
+
+    /* loader */
     .loading-spinner {
       text-align: center;
-      padding: 60px;
+      padding: 40px;
       grid-column: 1 / -1;
     }
 
     .spinner {
-      width: 48px;
-      height: 48px;
-      border: 4px solid var(--gray-200);
-      border-top: 4px solid var(--lime-dark);
+      width: 44px;
+      height: 44px;
+      border: 4px solid #e2eaf2;
+      border-top: 4px solid #1e3b4f;
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin: 0 auto 16px;
@@ -762,12 +522,11 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
+    /* responsive */
+    @media (max-width: 700px) {
       .search-section {
         flex-direction: column;
         align-items: stretch;
-        margin-top: -20px;
       }
       .filter-group {
         flex-wrap: wrap;
@@ -778,103 +537,36 @@
       .modal-content {
         padding: 24px;
       }
-      .hero-stats {
-        gap: 28px;
-      }
-      .hero-actions .btn {
-        padding: 14px 24px;
-        font-size: 0.95rem;
-      }
-      .listing-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .nav-inner {
-        justify-content: center;
-      }
-      .auth-buttons {
-        justify-content: center;
-      }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container nav-inner">
     <div class="logo">
       <i class="fas fa-mountain"></i> MineLink
     </div>
     <div class="auth-buttons">
+      <!-- logged out state -->
       <div class="logged-out active" id="loggedOutButtons">
         <button class="btn btn-outline" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Log in</button>
         <button class="btn btn-primary" id="registerBtn"><i class="fas fa-user-plus"></i> Sign up</button>
       </div>
+      <!-- logged in state -->
       <div class="logged-in-info" id="loggedInInfo">
         <span class="user-badge"><i class="fas fa-user-circle"></i> <span id="userEmailDisplay">miner@example.com</span></span>
         <button class="btn btn-outline" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
       </div>
-      <button class="btn btn-lime" id="addMineBtn"><i class="fas fa-plus-circle"></i> List a mine</button>
+      <button class="btn btn-accent" id="addMineBtn"><i class="fas fa-plus-circle"></i> List a mine</button>
     </div>
   </div>
 </nav>
 
-<!-- ===== HERO SECTION ===== -->
-<section class="hero">
-  <!-- Video background: free stock video of a mine -->
-  <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1523848309072-c199db53f137?w=1600&q=80">
-    <source src="https://videos.pexels.com/video-files/2098989/2098989-hd_1920_1080_30fps.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="hero-overlay"></div>
-
-  <!-- Floating animation icons -->
-  <div class="floating-icons">
-    <i class="fas fa-gem"></i>
-    <i class="fas fa-hard-hat"></i>
-    <i class="fas fa-truck-monster"></i>
-    <i class="fas fa-cogs"></i>
-    <i class="fas fa-mountain"></i>
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-badge"><i class="fas fa-bolt"></i> Africa's mining marketplace</div>
-    <h1>Discover, buy & sell <span class="highlight">mining properties</span> with confidence.</h1>
-    <p>Browse verified mines, review coordinates, and connect directly with sellers — all in one place.</p>
-    <div class="hero-actions">
-      <a href="#listings" class="btn btn-lime"><i class="fas fa-search"></i> Explore mines</a>
-      <button class="btn btn-outline" id="heroListBtn" style="background:rgba(255,255,255,0.12);color:white;border-color:rgba(255,255,255,0.3);">
-        <i class="fas fa-plus"></i> List your mine
-      </button>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <h3 id="statMines">0</h3>
-        <p>Mines listed</p>
-      </div>
-      <div class="hero-stat">
-        <h3>100%</h3>
-        <p>Free to browse</p>
-      </div>
-      <div class="hero-stat">
-        <h3>5</h3>
-        <p>Photos per listing</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SEARCH & FILTER ===== -->
-<div class="container" id="listings">
-  <div class="demo-banner" id="demoBanner">
-    <i class="fas fa-flask"></i> Demo mode — showing sample mines. Connect your Google Sheet to see live listings.
-  </div>
-
+<!-- MAIN CONTENT -->
+<div class="container">
+  <!-- SEARCH & FILTER -->
   <div class="search-section">
     <div class="search-wrapper">
       <i class="fas fa-search"></i>
@@ -883,27 +575,28 @@
     <div class="filter-group">
       <select id="locationFilter" class="filter-select">
         <option value="">All locations</option>
+        <!-- populated via JS from data -->
       </select>
       <button class="btn btn-outline" id="clearFiltersBtn"><i class="fas fa-rotate-left"></i> Clear</button>
     </div>
   </div>
 
-  <!-- ===== LISTING HEADER ===== -->
+  <!-- LISTING HEADER -->
   <div class="listing-header">
     <h2>Mining properties</h2>
     <span id="mineCount">0 mines</span>
   </div>
 
-  <!-- ===== GRID ===== -->
+  <!-- GRID -->
   <div class="mines-grid" id="minesGrid">
     <div class="loading-spinner">
       <div class="spinner"></div>
-      <p style="color:var(--gray-500);">Loading mines...</p>
+      <p>Loading mines from Google Sheets...</p>
     </div>
   </div>
 </div>
 
-<!-- ===== LOGIN MODAL ===== -->
+<!-- LOGIN MODAL -->
 <div class="modal" id="loginModal">
   <div class="modal-content">
     <div class="modal-header">
@@ -920,12 +613,12 @@
         <input type="password" id="loginPassword" required placeholder="••••••••">
       </div>
       <button type="submit" class="btn btn-primary btn-block">Log in</button>
-      <p style="text-align: center; margin-top: 16px; font-size: 0.85rem; color: var(--gray-500);">Demo: any email / password works</p>
+      <p style="text-align: center; margin-top: 16px; font-size: 0.9rem;">Demo: any email / password works</p>
     </form>
   </div>
 </div>
 
-<!-- ===== REGISTER MODAL ===== -->
+<!-- REGISTER MODAL -->
 <div class="modal" id="registerModal">
   <div class="modal-content">
     <div class="modal-header">
@@ -946,7 +639,7 @@
   </div>
 </div>
 
-<!-- ===== ADD MINE MODAL ===== -->
+<!-- ADD MINE MODAL -->
 <div class="modal" id="addMineModal">
   <div class="modal-content">
     <div class="modal-header">
@@ -993,47 +686,731 @@
         <label>Description / notes</label>
         <textarea id="mineDescription" rows="2" placeholder="Brief details..."></textarea>
       </div>
-      <button type="submit" class="btn btn-lime btn-block">Publish mine</button>
+      <button type="submit" class="btn btn-primary btn-block">Publish mine</button>
     </form>
   </div>
 </div>
 
-<!-- ===== TOAST ===== -->
+<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
   // ============================================================
-  // CONFIGURATION — Google Sheet ID + Apps Script URL
+  // CONFIGURATION – Replace with your deployed Google Apps Script URL
   // ============================================================
-  // Google Sheet ID — used to identify which spreadsheet the backend should connect to
-  const SHEET_ID = '1RlRRh_7sbJJAWWPvlRkKb0iaCuIQZWdixpTVYKLUYFQ';
-
-  // Deployed Google Apps Script Web App URL
-  const API_URL = 'https://script.google.com/macros/s/AKfycbyriRun1vRqLxerKDYXv_RgWYACuaQiq6H1otUg7g_Qi4XTUEVAweNHd2CdvQdhAWWVdQ';
-
-  // Helper to append sheetId to any request
-  function withSheetId(url, extraParams) {
-    const u = new URL(url);
-    u.searchParams.set('sheetId', SHEET_ID);
-    if (extraParams) {
-      Object.entries(extraParams).forEach(([k, v]) => u.searchParams.set(k, v));
+  const API_URL = '<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MineLink · mining properties</title>
+  <!-- Google Fonts & FontAwesome for clean icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    return u.toString();
-  }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fc;
+      color: #1e2b3c;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav */
+    .navbar {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      padding: 16px 0;
+      border-bottom: 1px solid #e9eef2;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1a3b4e;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: #d97706;
+      font-size: 2rem;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      border: none;
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: white;
+      color: #1e2b3c;
+      border: 1px solid #d0d9e2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: #1e3b4f;
+      color: white;
+      border: 1px solid #1e3b4f;
+    }
+
+    .btn-primary:hover {
+      background: #0f2b3b;
+    }
+
+    .btn-outline:hover {
+      background: #f0f4f9;
+    }
+
+    .btn-accent {
+      background: #d97706;
+      border-color: #d97706;
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background: #b85e05;
+    }
+
+    .user-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef3f8;
+      padding: 6px 16px 6px 12px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* search & filter section */
+    .search-section {
+      background: white;
+      border-radius: 30px;
+      padding: 20px 24px;
+      margin: 28px 0 24px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9eef2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-wrapper {
+      flex: 2;
+      min-width: 260px;
+      display: flex;
+      align-items: center;
+      background: #f4f8fe;
+      border-radius: 40px;
+      padding: 4px 8px 4px 20px;
+      border: 1px solid #dae2ec;
+    }
+
+    .search-wrapper i {
+      color: #5e7a93;
+      font-size: 1.1rem;
+    }
+
+    .search-wrapper input {
+      flex: 1;
+      padding: 12px 12px;
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-select {
+      padding: 12px 20px;
+      border-radius: 40px;
+      border: 1px solid #dae2ec;
+      background: white;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #1e2b3c;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+    }
+
+    /* listing grid */
+    .listing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .listing-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .listing-header span {
+      color: #5e7a93;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .mines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .mine-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e6ecf3;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mine-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-image {
+      height: 200px;
+      background: #d9e2ec;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-count {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-content {
+      padding: 20px 18px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mine-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      color: #0f2b3b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #d97706;
+      white-space: nowrap;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #5e7a93;
+      margin-bottom: 12px;
+    }
+
+    .location i {
+      font-size: 0.8rem;
+    }
+
+    .coords {
+      background: #f0f5fb;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1e3b4f;
+      margin-bottom: 14px;
+      display: inline-block;
+      align-self: flex-start;
+      letter-spacing: 0.2px;
+    }
+
+    .contact-info {
+      margin-top: 12px;
+      padding-top: 14px;
+      border-top: 1px solid #e6ecf3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      font-size: 0.85rem;
+      color: #3a5468;
+    }
+
+    .contact-info a, .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #1e3b4f;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .contact-info a:hover {
+      color: #d97706;
+    }
+
+    .whatsapp-link {
+      background: #e6f7eb;
+      padding: 4px 12px;
+      border-radius: 30px;
+      color: #0e6b3b !important;
+      font-weight: 600;
+    }
+
+    .whatsapp-link i {
+      color: #0e6b3b;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: 32px;
+      border: 1px dashed #bdd1e2;
+      grid-column: 1 / -1;
+    }
+
+    /* Modals */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 36px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 30px 32px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .modal-header h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #5e7a93;
+      line-height: 1;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #1e3b4f;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid #d0ddee;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #fafcff;
+      outline: none;
+      transition: border 0.15s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #1e3b4f;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .image-hint {
+      font-size: 0.8rem;
+      color: #5e7a93;
+      margin-top: 6px;
+    }
+
+    .btn-block {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 1rem;
+      border-radius: 30px;
+    }
+
+    .error-msg {
+      color: #b91c1c;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e2b3c;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 500;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+      opacity: 0;
+      transition: opacity 0.25s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    /* user status */
+    .logged-in-info {
+      display: none;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logged-in-info.active {
+      display: flex;
+    }
+
+    .auth-buttons .logged-out.active {
+      display: flex;
+    }
+
+    .logged-out {
+      display: none;
+    }
+
+    .logged-out.active {
+      display: flex;
+    }
+
+    /* loader */
+    .loading-spinner {
+      text-align: center;
+      padding: 40px;
+      grid-column: 1 / -1;
+    }
+
+    .spinner {
+      width: 44px;
+      height: 44px;
+      border: 4px solid #e2eaf2;
+      border-top: 4px solid #1e3b4f;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .search-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-group {
+        flex-wrap: wrap;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .modal-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <div class="logo">
+      <i class="fas fa-mountain"></i> MineLink
+    </div>
+    <div class="auth-buttons">
+      <!-- logged out state -->
+      <div class="logged-out active" id="loggedOutButtons">
+        <button class="btn btn-outline" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Log in</button>
+        <button class="btn btn-primary" id="registerBtn"><i class="fas fa-user-plus"></i> Sign up</button>
+      </div>
+      <!-- logged in state -->
+      <div class="logged-in-info" id="loggedInInfo">
+        <span class="user-badge"><i class="fas fa-user-circle"></i> <span id="userEmailDisplay">miner@example.com</span></span>
+        <button class="btn btn-outline" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+      <button class="btn btn-accent" id="addMineBtn"><i class="fas fa-plus-circle"></i> List a mine</button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <!-- SEARCH & FILTER -->
+  <div class="search-section">
+    <div class="search-wrapper">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search by mine name, town, or area...">
+    </div>
+    <div class="filter-group">
+      <select id="locationFilter" class="filter-select">
+        <option value="">All locations</option>
+        <!-- populated via JS from data -->
+      </select>
+      <button class="btn btn-outline" id="clearFiltersBtn"><i class="fas fa-rotate-left"></i> Clear</button>
+    </div>
+  </div>
+
+  <!-- LISTING HEADER -->
+  <div class="listing-header">
+    <h2>Mining properties</h2>
+    <span id="mineCount">0 mines</span>
+  </div>
+
+  <!-- GRID -->
+  <div class="mines-grid" id="minesGrid">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading mines from Google Sheets...</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Log in</h3>
+      <button class="close-modal" data-modal="loginModal">&times;</button>
+    </div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      <p style="text-align: center; margin-top: 16px; font-size: 0.9rem;">Demo: any email / password works</p>
+    </form>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Create account</h3>
+      <button class="close-modal" data-modal="registerModal">&times;</button>
+    </div>
+    <form id="registerForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="registerEmail" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="registerPassword" required placeholder="min. 6 characters">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+    </form>
+  </div>
+</div>
+
+<!-- ADD MINE MODAL -->
+<div class="modal" id="addMineModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>List a new mine</h3>
+      <button class="close-modal" data-modal="addMineModal">&times;</button>
+    </div>
+    <form id="addMineForm">
+      <div class="form-group">
+        <label>Mine name / Title *</label>
+        <input type="text" id="mineName" required placeholder="e.g., Copper Ridge Mine">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Location (town/area) *</label>
+          <input type="text" id="mineLocation" required placeholder="e.g., Tsumeb">
+        </div>
+        <div class="form-group">
+          <label>Selling price (USD) *</label>
+          <input type="number" id="minePrice" required placeholder="250000" step="any">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Coordinates (lat, long)</label>
+        <input type="text" id="mineCoords" placeholder="e.g., -19.2333, 17.7167">
+      </div>
+      <div class="form-group">
+        <label>Contact phone *</label>
+        <input type="text" id="minePhone" required placeholder="+264 81 123 4567">
+      </div>
+      <div class="form-group">
+        <label>Contact email *</label>
+        <input type="email" id="mineEmail" required placeholder="seller@mine.com">
+      </div>
+      <div class="form-group">
+        <label>WhatsApp link (optional)</label>
+        <input type="text" id="mineWhatsapp" placeholder="https://wa.me/264811234567">
+      </div>
+      <div class="form-group">
+        <label>Image URLs (up to 5, one per line) *</label>
+        <textarea id="mineImages" rows="3" placeholder="https://example.com/image1.jpg&#10;https://example.com/image2.jpg" required></textarea>
+        <div class="image-hint">First image will be used as cover. Paste direct image links.</div>
+      </div>
+      <div class="form-group">
+        <label>Description / notes</label>
+        <textarea id="mineDescription" rows="2" placeholder="Brief details..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Publish mine</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ============================================================
+  // CONFIGURATION – Replace with your deployed Google Apps Script URL
+  // ============================================================
+  const API_URL = 'https://script.google.com/macros/s/AKfycbzXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/exec'; // <-- CHANGE ME
 
   // State
   let currentUser = null;
   let allMines = [];
   let filteredMines = [];
-  let isDemoMode = false;
+  let activeLocationFilter = '';
 
   // DOM elements
   const minesGrid = document.getElementById('minesGrid');
   const searchInput = document.getElementById('searchInput');
   const locationFilter = document.getElementById('locationFilter');
   const mineCountSpan = document.getElementById('mineCount');
-  const statMines = document.getElementById('statMines');
-  const demoBanner = document.getElementById('demoBanner');
   const loggedOutButtons = document.getElementById('loggedOutButtons');
   const loggedInInfo = document.getElementById('loggedInInfo');
   const userEmailDisplay = document.getElementById('userEmailDisplay');
@@ -1043,149 +1420,43 @@
   const registerModal = document.getElementById('registerModal');
   const addMineModal = document.getElementById('addMineModal');
 
-  // ============================================================
-  // DEMO DATA (used when Apps Script is unreachable or not configured)
-  // ============================================================
-  const DEMO_MINES = [
-    {
-      id: 'demo-1',
-      name: 'Copper Ridge Mine',
-      location: 'Tsumeb, Namibia',
-      price: 450000,
-      coords: '-19.2333, 17.7167',
-      phone: '+264 81 123 4567',
-      email: 'copperridge@minelink.demo',
-      whatsapp: 'https://wa.me/264811234567',
-      images: [
-        'https://images.unsplash.com/photo-1523848309072-c199db53f137?w=800&q=80',
-        'https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=800&q=80',
-        'https://images.unsplash.com/photo-1624365168968-f283d506c6b6?w=800&q=80'
-      ],
-      description: 'High-grade copper deposit with existing infrastructure.'
-    },
-    {
-      id: 'demo-2',
-      name: 'Limestone Valley Quarry',
-      location: 'Otjiwarongo, Namibia',
-      price: 220000,
-      coords: '-20.4637, 16.6477',
-      phone: '+264 81 234 5678',
-      email: 'limestone@minelink.demo',
-      whatsapp: 'https://wa.me/264812345678',
-      images: [
-        'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&q=80',
-        'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80'
-      ],
-      description: 'Large limestone reserve with easy road access.'
-    },
-    {
-      id: 'demo-3',
-      name: 'Goldfields Prospect',
-      location: 'Karibib, Namibia',
-      price: 1200000,
-      coords: '-21.9333, 15.8333',
-      phone: '+264 81 345 6789',
-      email: 'goldfields@minelink.demo',
-      whatsapp: 'https://wa.me/264813456789',
-      images: [
-        'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&q=80',
-        'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=80',
-        'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
-        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80'
-      ],
-      description: 'Exploration licence with promising gold assays.'
-    },
-    {
-      id: 'demo-4',
-      name: 'Diamond Coast Concession',
-      location: 'Lüderitz, Namibia',
-      price: 2800000,
-      coords: '-26.6481, 15.1594',
-      phone: '+264 81 456 7890',
-      email: 'diamondcoast@minelink.demo',
-      whatsapp: 'https://wa.me/264814567890',
-      images: [
-        'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
-        'https://images.unsplash.com/photo-1523848309072-c199db53f137?w=800&q=80'
-      ],
-      description: 'Coastal diamond mining rights with marine access.'
-    },
-    {
-      id: 'demo-5',
-      name: 'Marble Hills Quarry',
-      location: 'Mariental, Namibia',
-      price: 180000,
-      coords: '-24.6333, 17.9667',
-      phone: '+264 81 567 8901',
-      email: 'marblehills@minelink.demo',
-      whatsapp: 'https://wa.me/264815678901',
-      images: [
-        'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80',
-        'https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=800&q=80',
-        'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&q=80'
-      ],
-      description: 'White marble quarry with established client base.'
-    },
-    {
-      id: 'demo-6',
-      name: 'Uranium Basin Site',
-      location: 'Swakopmund, Namibia',
-      price: 3500000,
-      coords: '-22.6833, 14.5333',
-      phone: '+264 81 678 9012',
-      email: 'uraniumbasin@minelink.demo',
-      whatsapp: 'https://wa.me/264816789012',
-      images: [
-        'https://images.unsplash.com/photo-1624365168968-f283d506c6b6?w=800&q=80',
-        'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
-        'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=80'
-      ],
-      description: 'Uranium exploration project near coastal infrastructure.'
-    }
-  ];
-
-  // ============================================================
-  // AUTH
-  // ============================================================
+  // Buttons
   document.getElementById('loginBtn').addEventListener('click', () => loginModal.classList.add('open'));
   document.getElementById('registerBtn').addEventListener('click', () => registerModal.classList.add('open'));
-  document.getElementById('addMineBtn').addEventListener('click', openAddMine);
-  document.getElementById('heroListBtn').addEventListener('click', openAddMine);
-
-  function openAddMine() {
+  document.getElementById('addMineBtn').addEventListener('click', () => {
     if (!currentUser) {
       showToast('Please log in to list a mine', 'error');
       loginModal.classList.add('open');
       return;
     }
     addMineModal.classList.add('open');
-  }
-
+  });
   document.getElementById('logoutBtn').addEventListener('click', () => {
     currentUser = null;
     updateAuthUI();
     showToast('Logged out');
   });
-
   document.getElementById('clearFiltersBtn').addEventListener('click', () => {
     searchInput.value = '';
     locationFilter.value = '';
+    activeLocationFilter = '';
     applyFilters();
   });
 
+  // Close modals
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modalId = e.target.dataset.modal;
       document.getElementById(modalId).classList.remove('open');
     });
   });
-
   window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
       e.target.classList.remove('open');
     }
   });
 
+  // ---- AUTH ----
   document.getElementById('loginForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value.trim();
@@ -1221,68 +1492,49 @@
     }
   }
 
-  // ============================================================
-  // FETCH MINES — tries Google Sheets, falls back to demo data
-  // ============================================================
+  // ---- FETCH DATA FROM GOOGLE SHEETS via Apps Script ----
   async function fetchMines() {
     try {
-      const response = await fetch(withSheetId(API_URL, { action: 'getMines' }));
+      const response = await fetch(`${API_URL}?action=getMines`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
-      let fetched = data.mines || data;
-      if (!Array.isArray(fetched) || fetched.length === 0) throw new Error('Empty dataset');
-
-      allMines = fetched.map(normalizeMine);
-      isDemoMode = false;
-      demoBanner.classList.remove('active');
+      // Expected array of mine objects
+      allMines = data.mines || data; 
+      if (!Array.isArray(allMines)) allMines = [];
+      // Normalize fields
+      allMines = allMines.map(m => ({
+        id: m.id || Date.now() + Math.random(),
+        name: m.name || m.title || 'Untitled mine',
+        location: m.location || m.area || 'Unknown',
+        price: m.price || m.sellingPrice || '—',
+        coords: m.coords || m.coordinates || '',
+        phone: m.phone || m.phoneNumber || '',
+        email: m.email || '',
+        whatsapp: m.whatsapp || '',
+        images: m.images ? (typeof m.images === 'string' ? m.images.split('\n').filter(u => u.trim()) : m.images) : [],
+        description: m.description || ''
+      }));
+      populateLocationFilter();
+      applyFilters();
     } catch (error) {
-      console.warn('Google Sheets not available — using demo data:', error.message);
-      allMines = DEMO_MINES.map(normalizeMine);
-      isDemoMode = true;
-      demoBanner.classList.add('active');
+      console.error('Error loading mines:', error);
+      minesGrid.innerHTML = `<div class="empty-state"><i class="fas fa-exclamation-triangle" style="font-size:2rem;color:#d97706;margin-bottom:16px;"></i><p>Could not load mines. Please check the API URL and try again.</p></div>`;
     }
-
-    populateLocationFilter();
-    applyFilters();
-    statMines.textContent = allMines.length;
-  }
-
-  function normalizeMine(m) {
-    return {
-      id: m.id || Date.now() + Math.random(),
-      name: m.name || m.title || 'Untitled mine',
-      location: m.location || m.area || 'Unknown',
-      price: m.price || m.sellingPrice || '—',
-      coords: m.coords || m.coordinates || '',
-      phone: m.phone || m.phoneNumber || '',
-      email: m.email || '',
-      whatsapp: m.whatsapp || '',
-      images: Array.isArray(m.images)
-        ? m.images
-        : typeof m.images === 'string'
-          ? m.images.split('\n').filter(u => u.trim())
-          : [],
-      description: m.description || ''
-    };
   }
 
   function populateLocationFilter() {
     const locations = [...new Set(allMines.map(m => m.location).filter(Boolean))].sort();
-    const current = locationFilter.value;
     locationFilter.innerHTML = '<option value="">All locations</option>' +
       locations.map(loc => `<option value="${escapeHtml(loc)}">${escapeHtml(loc)}</option>`).join('');
-    locationFilter.value = current;
   }
 
-  // ============================================================
-  // FILTERING & RENDERING
-  // ============================================================
+  // ---- FILTERING ----
   function applyFilters() {
     const searchTerm = searchInput.value.trim().toLowerCase();
     const locFilter = locationFilter.value;
 
     filteredMines = allMines.filter(mine => {
-      const matchesSearch = !searchTerm ||
+      const matchesSearch = !searchTerm || 
         mine.name.toLowerCase().includes(searchTerm) ||
         mine.location.toLowerCase().includes(searchTerm);
       const matchesLocation = !locFilter || mine.location === locFilter;
@@ -1295,33 +1547,28 @@
   searchInput.addEventListener('input', applyFilters);
   locationFilter.addEventListener('change', applyFilters);
 
+  // ---- RENDER ----
   function renderMines() {
     if (!filteredMines.length) {
       minesGrid.innerHTML = `<div class="empty-state">
-        <i class="fas fa-mountain"></i>
+        <i class="fas fa-mountain" style="font-size:2.5rem;color:#bdd1e2;margin-bottom:16px;"></i>
         <h3 style="margin-bottom:8px;">No mines found</h3>
-        <p style="color:var(--gray-500);">Try adjusting your search or filters.</p>
+        <p style="color:#5e7a93;">Try adjusting your search or filters.</p>
       </div>`;
       mineCountSpan.textContent = '0 mines';
       return;
     }
 
-    minesGrid.innerHTML = filteredMines.map((mine, idx) => {
-      const coverImage = mine.images && mine.images.length
-        ? mine.images[0]
-        : 'https://placehold.co/600x400/d4e7f5/0a2e4e?text=Mine+Image';
+    minesGrid.innerHTML = filteredMines.map(mine => {
+      const coverImage = mine.images && mine.images.length ? mine.images[0] : 'https://placehold.co/600x400/e9eef2/1e3b4f?text=Mine+image';
       const imageCount = mine.images ? mine.images.length : 0;
-      const priceDisplay = typeof mine.price === 'number'
-        ? `$${mine.price.toLocaleString()}`
-        : mine.price;
-      const whatsappLink = mine.whatsapp ||
-        (mine.phone ? `https://wa.me/${(mine.phone || '').replace(/[^0-9]/g, '')}` : '');
+      const priceDisplay = typeof mine.price === 'number' ? `$${mine.price.toLocaleString()}` : mine.price;
+      const whatsappLink = mine.whatsapp || `https://wa.me/${(mine.phone || '').replace(/[^0-9]/g, '')}`;
 
       return `
-        <div class="mine-card" style="animation-delay:${idx * 0.05}s" data-id="${mine.id}">
+        <div class="mine-card" data-id="${mine.id}">
           <div class="card-image">
-            <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(mine.name)}" loading="lazy"
-                 onerror="this.src='https://placehold.co/600x400/d4e7f5/0a2e4e?text=Image+unavailable'">
+            <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(mine.name)}" loading="lazy" onerror="this.src='https://placehold.co/600x400/e9eef2/1e3b4f?text=Image+unavailable'">
             ${imageCount > 1 ? `<span class="image-count"><i class="fas fa-images"></i> ${imageCount}</span>` : ''}
           </div>
           <div class="card-content">
@@ -1334,7 +1581,7 @@
             <div class="contact-info">
               <a href="tel:${escapeHtml(mine.phone)}"><i class="fas fa-phone"></i> ${escapeHtml(mine.phone || '—')}</a>
               <a href="mailto:${escapeHtml(mine.email)}"><i class="fas fa-envelope"></i> ${escapeHtml(mine.email || '—')}</a>
-              ${whatsappLink ? `<a href="${escapeHtml(whatsappLink)}" target="_blank" rel="noopener" class="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>` : ''}
+              ${whatsappLink ? `<a href="${escapeHtml(whatsappLink)}" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>` : ''}
             </div>
           </div>
         </div>
@@ -1344,9 +1591,7 @@
     mineCountSpan.textContent = `${filteredMines.length} mine${filteredMines.length !== 1 ? 's' : ''}`;
   }
 
-  // ============================================================
-  // SUBMIT NEW MINE
-  // ============================================================
+  // ---- SUBMIT NEW MINE ----
   document.getElementById('addMineForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!currentUser) {
@@ -1376,59 +1621,38 @@
       timestamp: new Date().toISOString()
     };
 
-    // If in demo mode, add to local array
-    if (isDemoMode) {
-      allMines.unshift(normalizeMine({ ...newMine, id: 'local-' + Date.now() }));
-      populateLocationFilter();
-      applyFilters();
-      addMineModal.classList.remove('open');
-      document.getElementById('addMineForm').reset();
-      statMines.textContent = allMines.length;
-      showToast('Mine listed locally (demo mode). Connect Google Sheets for persistence.');
-      return;
-    }
-
     try {
-      const response = await fetch(withSheetId(API_URL), {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'addMine', sheetId: SHEET_ID, mine: newMine })
+        body: JSON.stringify({ action: 'addMine', mine: newMine })
       });
       const result = await response.json();
       if (result.success) {
         showToast('Mine listed successfully!');
         addMineModal.classList.remove('open');
         document.getElementById('addMineForm').reset();
-        await fetchMines();
+        await fetchMines(); // reload
       } else {
         throw new Error(result.error || 'Unknown error');
       }
     } catch (error) {
       console.error('Error adding mine:', error);
-      // Fallback: add locally
-      allMines.unshift(normalizeMine({ ...newMine, id: 'local-' + Date.now() }));
-      populateLocationFilter();
-      applyFilters();
-      addMineModal.classList.remove('open');
-      document.getElementById('addMineForm').reset();
-      statMines.textContent = allMines.length;
-      showToast('Saved locally (could not reach server).', 'error');
+      showToast('Error listing mine: ' + error.message, 'error');
     }
   });
 
-  // ============================================================
-  // UTILITIES
-  // ============================================================
+  // ---- UTILS ----
   function showToast(msg, type = 'success') {
     const toast = document.getElementById('toast');
     toast.textContent = msg;
-    toast.className = 'toast' + (type === 'error' ? ' error' : '');
+    toast.style.background = type === 'error' ? '#b91c1c' : '#1e2b3c';
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3400);
+    setTimeout(() => toast.classList.remove('show'), 3200);
   }
 
   function escapeHtml(text) {
-    if (!text && text !== 0) return '';
+    if (!text) return '';
     return String(text).replace(/[&<>"]/g, function(m) {
       if (m === '&') return '&amp;';
       if (m === '<') return '&lt;';
@@ -1438,13 +1662,1469 @@
     });
   }
 
-  // ============================================================
-  // INIT
-  // ============================================================
-  (function init() {
+  // ---- INIT ----
+  (async function init() {
     updateAuthUI();
-    fetchMines();
+    await fetchMines();
   })();
+
 </script>
+
+<!-- ============================================================
+  GOOGLE APPS SCRIPT (append to your script editor)
+  ------------------------------------------------------------
+  function doGet(e) {
+    const action = e.parameter.action;
+    if (action === 'getMines') {
+      return getMines();
+    }
+    return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function doPost(e) {
+    try {
+      const data = JSON.parse(e.postData.contents);
+      if (data.action === 'addMine') {
+        return addMine(data.mine);
+      }
+      return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      return ContentService.createTextOutput(JSON.stringify({ error: err.message }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  function getMines() {
+    const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getSheetByName('Mines');
+    const rows = sheet.getDataRange().getValues();
+    const headers = rows[0];
+    const mines = [];
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i];
+      const mine = {};
+      headers.forEach((header, index) => {
+        let value = row[index];
+        if (header === 'images' && typeof value === 'string') {
+          value = value.split('\n').filter(u => u.trim());
+        }
+        mine[header] = value;
+      });
+      mine.id = i; // row index as id
+      mines.push(mine);
+    }
+    return ContentService.createTextOutput(JSON.stringify({ mines }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function addMine(mine) {
+    const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getSheetByName('Mines');
+    const headers = sheet.getDataRange().getValues()[0];
+    
+    // Build row in header order
+    const row = headers.map(header => {
+      if (header === 'images') {
+        return Array.isArray(mine.images) ? mine.images.join('\n') : (mine.images || '');
+      }
+      return mine[header] || '';
+    });
+    
+    sheet.appendRow(row);
+    
+    return ContentService.createTextOutput(JSON.stringify({ success: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  // Note: Make sure your sheet has headers matching the field names:
+  // name, location, price, coords, phone, email, whatsapp, images, description, seller, timestamp
+  // And set the sheet ID in YOUR_SHEET_ID.
+  ============================================================ -->
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MineLink · mining properties</title>
+  <!-- Google Fonts & FontAwesome for clean icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fc;
+      color: #1e2b3c;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav */
+    .navbar {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      padding: 16px 0;
+      border-bottom: 1px solid #e9eef2;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1a3b4e;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: #d97706;
+      font-size: 2rem;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      border: none;
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: white;
+      color: #1e2b3c;
+      border: 1px solid #d0d9e2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: #1e3b4f;
+      color: white;
+      border: 1px solid #1e3b4f;
+    }
+
+    .btn-primary:hover {
+      background: #0f2b3b;
+    }
+
+    .btn-outline:hover {
+      background: #f0f4f9;
+    }
+
+    .btn-accent {
+      background: #d97706;
+      border-color: #d97706;
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background: #b85e05;
+    }
+
+    .user-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef3f8;
+      padding: 6px 16px 6px 12px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* search & filter section */
+    .search-section {
+      background: white;
+      border-radius: 30px;
+      padding: 20px 24px;
+      margin: 28px 0 24px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9eef2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-wrapper {
+      flex: 2;
+      min-width: 260px;
+      display: flex;
+      align-items: center;
+      background: #f4f8fe;
+      border-radius: 40px;
+      padding: 4px 8px 4px 20px;
+      border: 1px solid #dae2ec;
+    }
+
+    .search-wrapper i {
+      color: #5e7a93;
+      font-size: 1.1rem;
+    }
+
+    .search-wrapper input {
+      flex: 1;
+      padding: 12px 12px;
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-select {
+      padding: 12px 20px;
+      border-radius: 40px;
+      border: 1px solid #dae2ec;
+      background: white;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #1e2b3c;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+    }
+
+    /* listing grid */
+    .listing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .listing-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .listing-header span {
+      color: #5e7a93;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .mines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .mine-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e6ecf3;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mine-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-image {
+      height: 200px;
+      background: #d9e2ec;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-count {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-content {
+      padding: 20px 18px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mine-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      color: #0f2b3b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #d97706;
+      white-space: nowrap;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #5e7a93;
+      margin-bottom: 12px;
+    }
+
+    .location i {
+      font-size: 0.8rem;
+    }
+
+    .coords {
+      background: #f0f5fb;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1e3b4f;
+      margin-bottom: 14px;
+      display: inline-block;
+      align-self: flex-start;
+      letter-spacing: 0.2px;
+    }
+
+    .contact-info {
+      margin-top: 12px;
+      padding-top: 14px;
+      border-top: 1px solid #e6ecf3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      font-size: 0.85rem;
+      color: #3a5468;
+    }
+
+    .contact-info a, .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #1e3b4f;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .contact-info a:hover {
+      color: #d97706;
+    }
+
+    .whatsapp-link {
+      background: #e6f7eb;
+      padding: 4px 12px;
+      border-radius: 30px;
+      color: #0e6b3b !important;
+      font-weight: 600;
+    }
+
+    .whatsapp-link i {
+      color: #0e6b3b;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: 32px;
+      border: 1px dashed #bdd1e2;
+      grid-column: 1 / -1;
+    }
+
+    /* Modals */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 36px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 30px 32px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .modal-header h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #5e7a93;
+      line-height: 1;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #1e3b4f;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid #d0ddee;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #fafcff;
+      outline: none;
+      transition: border 0.15s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #1e3b4f;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .image-hint {
+      font-size: 0.8rem;
+      color: #5e7a93;
+      margin-top: 6px;
+    }
+
+    .btn-block {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 1rem;
+      border-radius: 30px;
+    }
+
+    .error-msg {
+      color: #b91c1c;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e2b3c;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 500;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+      opacity: 0;
+      transition: opacity 0.25s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    /* user status */
+    .logged-in-info {
+      display: none;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logged-in-info.active {
+      display: flex;
+    }
+
+    .auth-buttons .logged-out.active {
+      display: flex;
+    }
+
+    .logged-out {
+      display: none;
+    }
+
+    .logged-out.active {
+      display: flex;
+    }
+
+    /* loader */
+    .loading-spinner {
+      text-align: center;
+      padding: 40px;
+      grid-column: 1 / -1;
+    }
+
+    .spinner {
+      width: 44px;
+      height: 44px;
+      border: 4px solid #e2eaf2;
+      border-top: 4px solid #1e3b4f;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .search-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-group {
+        flex-wrap: wrap;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .modal-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <div class="logo">
+      <i class="fas fa-mountain"></i> MineLink
+    </div>
+    <div class="auth-buttons">
+      <!-- logged out state -->
+      <div class="logged-out active" id="loggedOutButtons">
+        <button class="btn btn-outline" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Log in</button>
+        <button class="btn btn-primary" id="registerBtn"><i class="fas fa-user-plus"></i> Sign up</button>
+      </div>
+      <!-- logged in state -->
+      <div class="logged-in-info" id="loggedInInfo">
+        <span class="user-badge"><i class="fas fa-user-circle"></i> <span id="userEmailDisplay">miner@example.com</span></span>
+        <button class="btn btn-outline" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+      <button class="btn btn-accent" id="addMineBtn"><i class="fas fa-plus-circle"></i> List a mine</button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <!-- SEARCH & FILTER -->
+  <div class="search-section">
+    <div class="search-wrapper">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search by mine name, town, or area...">
+    </div>
+    <div class="filter-group">
+      <select id="locationFilter" class="filter-select">
+        <option value="">All locations</option>
+        <!-- populated via JS from data -->
+      </select>
+      <button class="btn btn-outline" id="clearFiltersBtn"><i class="fas fa-rotate-left"></i> Clear</button>
+    </div>
+  </div>
+
+  <!-- LISTING HEADER -->
+  <div class="listing-header">
+    <h2>Mining properties</h2>
+    <span id="mineCount">0 mines</span>
+  </div>
+
+  <!-- GRID -->
+  <div class="mines-grid" id="minesGrid">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading mines from Google Sheets...</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Log in</h3>
+      <button class="close-modal" data-modal="loginModal">&times;</button>
+    </div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      <p style="text-align: center; margin-top: 16px; font-size: 0.9rem;">Demo: any email / password works</p>
+    </form>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Create account</h3>
+      <button class="close-modal" data-modal="registerModal">&times;</button>
+    </div>
+    <form id="registerForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="registerEmail" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="registerPassword" required placeholder="min. 6 characters">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+    </form>
+  </div>
+</div>
+
+<!-- ADD MINE MODAL -->
+<div class="modal" id="addMineModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>List a new mine</h3>
+      <button class="close-modal" data-modal="addMineModal">&times;</button>
+    </div>
+    <form id="addMineForm">
+      <div class="form-group">
+        <label>Mine name / Title *</label>
+        <input type="text" id="mineName" required placeholder="e.g., Copper Ridge Mine">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Location (town/area) *</label>
+          <input type="text" id="mineLocation" required placeholder="e.g., Tsumeb">
+        </div>
+        <div class="form-group">
+          <label>Selling price (USD) *</label>
+          <input type="number" id="minePrice" required placeholder="250000" step="any">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Coordinates (lat, long)</label>
+        <input type="text" id="mineCoords" placeholder="e.g., -19.2333, 17.7167">
+      </div>
+      <div class="form-group">
+        <label>Contact phone *</label>
+        <input type="text" id="minePhone" required placeholder="+264 81 123 4567">
+      </div>
+      <div class="form-group">
+        <label>Contact email *</label>
+        <input type="email" id="mineEmail" required placeholder="seller@mine.com">
+      </div>
+      <div class="form-group">
+        <label>WhatsApp link (optional)</label>
+        <input type="text" id="mineWhatsapp" placeholder="https://wa.me/264811234567">
+      </div>
+      <div class="form-group">
+        <label>Image URLs (up to 5, one per line) *</label>
+        <textarea id="mineImages" rows="3" placeholder="https://example.com/image1.jpg&#10;https://example.com/image2.jpg" required></textarea>
+        <div class="image-hint">First image will be used as cover. Paste direct image links.</div>
+      </div>
+      <div class="form-group">
+        <label>Description / notes</label>
+        <textarea id="mineDescription" rows="2" placeholder="Brief details..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Publish mine</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ============================================================
+  // CONFIGURATION – Replace with your deployed Google Apps Script URL
+  // ============================================================
+  const API_URL = 'https://script.google.com/macros/s/AKfycbzXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/exec'; // <-- CHANGE ME
+
+  // State
+  let currentUser = null;
+  let allMines = [];
+  let filteredMines = [];
+  let activeLocationFilter = '';
+
+  // DOM elements
+  const minesGrid = document.getElementById('minesGrid');
+  const searchInput = document.getElementById('searchInput');
+  const locationFilter = document.getElementById('locationFilter');
+  const mineCountSpan = document.getElementById('mineCount');
+  const loggedOutButtons = document.getElementById('loggedOutButtons');
+  const loggedInInfo = document.getElementById('loggedInInfo');
+  const userEmailDisplay = document.getElementById('userEmailDisplay');
+
+  // Modals
+  const loginModal = document.getElementById('loginModal');
+  const registerModal = document.getElementById('registerModal');
+  const addMineModal = document.getElementById('addMineModal');
+
+  // Buttons
+  document.getElementById('loginBtn').addEventListener('click', () => loginModal.classList.add('open'));
+  document.getElementById('registerBtn').addEventListener('click', () => registerModal.classList.add('open'));
+  document.getElementById('addMineBtn').addEventListener('click', () => {
+    if (!currentUser) {
+      showToast('Please log in to list a mine', 'error');
+      loginModal.classList.add('open');
+      return;
+    }
+    addMineModal.classList.add('open');
+  });
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    currentUser = null;
+    updateAuthUI();
+    showToast('Logged out');
+  });
+  document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+    searchInput.value = '';
+    locationFilter.value = '';
+    activeLocationFilter = '';
+    applyFilters();
+  });
+
+  // Close modals
+  document.querySelectorAll('.close-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const modalId = e.target.dataset.modal;
+      document.getElementById(modalId).classList.remove('open');
+    });
+  });
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+      e.target.classList.remove('open');
+    }
+  });
+
+  // ---- AUTH ----
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim();
+    if (!email) return;
+    currentUser = { email };
+    updateAuthUI();
+    loginModal.classList.remove('open');
+    showToast('Logged in as ' + email);
+  });
+
+  document.getElementById('registerForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('registerEmail').value.trim();
+    const pass = document.getElementById('registerPassword').value;
+    if (!email || pass.length < 6) {
+      showToast('Password must be at least 6 characters', 'error');
+      return;
+    }
+    currentUser = { email };
+    updateAuthUI();
+    registerModal.classList.remove('open');
+    showToast('Account created! You are now logged in.');
+  });
+
+  function updateAuthUI() {
+    if (currentUser) {
+      loggedOutButtons.classList.remove('active');
+      loggedInInfo.classList.add('active');
+      userEmailDisplay.textContent = currentUser.email;
+    } else {
+      loggedOutButtons.classList.add('active');
+      loggedInInfo.classList.remove('active');
+    }
+  }
+
+  // ---- FETCH DATA FROM GOOGLE SHEETS via Apps Script ----
+  async function fetchMines() {
+    try {
+      const response = await fetch(`${API_URL}?action=getMines`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      // Expected array of mine objects
+      allMines = data.mines || data; 
+      if (!Array.isArray(allMines)) allMines = [];
+      // Normalize fields
+      allMines = allMines.map(m => ({
+        id: m.id || Date.now() + Math.random(),
+        name: m.name || m.title || 'Untitled mine',
+        location: m.location || m.area || 'Unknown',
+        price: m.price || m.sellingPrice || '—',
+        coords: m.coords || m.coordinates || '',
+        phone: m.phone || m.phoneNumber || '',
+        email: m.email || '',
+        whatsapp: m.whatsapp || '',
+        images: m.images ? (typeof m.images === 'string' ? m.images.split('\n').filter(u => u.trim()) : m.images) : [],
+        description: m.description || ''
+      }));
+      populateLocationFilter();
+      applyFilters();
+    } catch (error) {
+      console.error('Error loading mines:', error);
+      minesGrid.innerHTML = `<div class="empty-state"><i class="fas fa-exclamation-triangle" style="font-size:2rem;color:#d97706;margin-bottom:16px;"></i><p>Could not load mines. Please check the API URL and try again.</p></div>`;
+    }
+  }
+
+  function populateLocationFilter() {
+    const locations = [...new Set(allMines.map(m => m.location).filter(Boolean))].sort();
+    locationFilter.innerHTML = '<option value="">All locations</option>' +
+      locations.map(loc => `<option value="${escapeHtml(loc)}">${escapeHtml(loc)}</option>`).join('');
+  }
+
+  // ---- FILTERING ----
+  function applyFilters() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const locFilter = locationFilter.value;
+
+    filteredMines = allMines.filter(mine => {
+      const matchesSearch = !searchTerm || 
+        mine.name.toLowerCase().includes(searchTerm) ||
+        mine.location.toLowerCase().includes(searchTerm);
+      const matchesLocation = !locFilter || mine.location === locFilter;
+      return matchesSearch && matchesLocation;
+    });
+
+    renderMines();
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  locationFilter.addEventListener('change', applyFilters);
+
+  // ---- RENDER ----
+  function renderMines() {
+    if (!filteredMines.length) {
+      minesGrid.innerHTML = `<div class="empty-state">
+        <i class="fas fa-mountain" style="font-size:2.5rem;color:#bdd1e2;margin-bottom:16px;"></i>
+        <h3 style="margin-bottom:8px;">No mines found</h3>
+        <p style="color:#5e7a93;">Try adjusting your search or filters.</p>
+      </div>`;
+      mineCountSpan.textContent = '0 mines';
+      return;
+    }
+
+    minesGrid.innerHTML = filteredMines.map(mine => {
+      const coverImage = mine.images && mine.images.length ? mine.images[0] : 'https://placehold.co/600x400/e9eef2/1e3b4f?text=Mine+image';
+      const imageCount = mine.images ? mine.images.length : 0;
+      const priceDisplay = typeof mine.price === 'number' ? `$${mine.price.toLocaleString()}` : mine.price;
+      const whatsappLink = mine.whatsapp || `https://wa.me/${(mine.phone || '').replace(/[^0-9]/g, '')}`;
+
+      return `
+        <div class="mine-card" data-id="${mine.id}">
+          <div class="card-image">
+            <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(mine.name)}" loading="lazy" onerror="this.src='https://placehold.co/600x400/e9eef2/1e3b4f?text=Image+unavailable'">
+            ${imageCount > 1 ? `<span class="image-count"><i class="fas fa-images"></i> ${imageCount}</span>` : ''}
+          </div>
+          <div class="card-content">
+            <div class="mine-title">
+              <span>${escapeHtml(mine.name)}</span>
+              <span class="price">${escapeHtml(priceDisplay.toString())}</span>
+            </div>
+            <div class="location"><i class="fas fa-map-pin"></i> ${escapeHtml(mine.location)}</div>
+            ${mine.coords ? `<div class="coords"><i class="fas fa-location-dot"></i> ${escapeHtml(mine.coords)}</div>` : ''}
+            <div class="contact-info">
+              <a href="tel:${escapeHtml(mine.phone)}"><i class="fas fa-phone"></i> ${escapeHtml(mine.phone || '—')}</a>
+              <a href="mailto:${escapeHtml(mine.email)}"><i class="fas fa-envelope"></i> ${escapeHtml(mine.email || '—')}</a>
+              ${whatsappLink ? `<a href="${escapeHtml(whatsappLink)}" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    mineCountSpan.textContent = `${filteredMines.length} mine${filteredMines.length !== 1 ? 's' : ''}`;
+  }
+
+  // ---- SUBMIT NEW MINE ----
+  document.getElementById('addMineForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!currentUser) {
+      showToast('Please log in first', 'error');
+      return;
+    }
+
+    const name = document.getElementById('mineName').value.trim();
+    const location = document.getElementById('mineLocation').value.trim();
+    const price = document.getElementById('minePrice').value;
+    const coords = document.getElementById('mineCoords').value.trim();
+    const phone = document.getElementById('minePhone').value.trim();
+    const email = document.getElementById('mineEmail').value.trim();
+    const whatsapp = document.getElementById('mineWhatsapp').value.trim();
+    const imageLines = document.getElementById('mineImages').value.trim().split('\n').filter(u => u.trim());
+    const description = document.getElementById('mineDescription').value.trim();
+
+    if (imageLines.length > 5) {
+      showToast('You can upload up to 5 image URLs', 'error');
+      return;
+    }
+
+    const newMine = {
+      name, location, price, coords, phone, email, whatsapp,
+      images: imageLines, description,
+      seller: currentUser.email,
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'addMine', mine: newMine })
+      });
+      const result = await response.json();
+      if (result.success) {
+        showToast('Mine listed successfully!');
+        addMineModal.classList.remove('open');
+        document.getElementById('addMineForm').reset();
+        await fetchMines(); // reload
+      } else {
+        throw new Error(result.error || 'Unknown error');
+      }
+    } catch (error) {
+      console.error('Error adding mine:', error);
+      showToast('Error listing mine: ' + error.message, 'error');
+    }
+  });
+
+  // ---- UTILS ----
+  function showToast(msg, type = 'success') {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.style.background = type === 'error' ? '#b91c1c' : '#1e2b3c';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3200);
+  }
+
+  function escapeHtml(text) {
+    if (!text) return '';
+    return String(text).replace(/[&<>"]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      if (m === '"') return '&quot;';
+      return m;
+    });
+  }
+
+  // ---- INIT ----
+  (async function init() {
+    updateAuthUI();
+    await fetchMines();
+  })();
+
+</script>
+
+<!-- ============================================================
+  GOOGLE APPS SCRIPT (append to your script editor)
+  ------------------------------------------------------------
+  function doGet(e) {
+    const action = e.parameter.action;
+    if (action === 'getMines') {
+      return getMines();
+    }
+    return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function doPost(e) {
+    try {
+      const data = JSON.parse(e.postData.contents);
+      if (data.action === 'addMine') {
+        return addMine(data.mine);
+      }
+      return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      return ContentService.createTextOutput(JSON.stringify({ error: err.message }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  function getMines() {
+    const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getSheetByName('Mines');
+    const rows = sheet.getDataRange().getValues();
+    const headers = rows[0];
+    const mines = [];
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i];
+      const mine = {};
+      headers.forEach((header, index) => {
+        let value = row[index];
+        if (header === 'images' && typeof value === 'string') {
+          value = value.split('\n').filter(u => u.trim());
+        }
+        mine[header] = value;
+      });
+      mine.id = i; // row index as id
+      mines.push(mine);
+    }
+    return ContentService.createTextOutput(JSON.stringify({ mines }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function addMine(mine) {
+    const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getSheetByName('Mines');
+    const headers = sheet.getDataRange().getValues()[0];
+    
+    // Build row in header order
+    const row = headers.map(header => {
+      if (header === 'images') {
+        return Array.isArray(mine.images) ? mine.images.join('\n') : (mine.images || '');
+      }
+      return mine[header] || '';
+    });
+    
+    sheet.appendRow(row);
+    
+    return ContentService.createTextOutput(JSON.stringify({ success: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  // Note: Make sure your sheet has headers matching the field names:
+  // name, location, price, coords, phone, email, whatsapp, images, description, seller, timestamp
+  // And set the sheet ID in YOUR_SHEET_ID.
+  ============================================================ -->
+</body>
+</html> 'https://script.google.com/macros/s/AKfycbz6nm4ntD2TNsAAYFmqDVJmrAofYPe9o8QVekxweA8IHqWUoLauCze9oTa5p8K5aLHYew/exec'; // <-- CHANGE ME
+
+  // State
+  let currentUser = null;
+  let allMines = [];
+  let filteredMines = [];
+  let activeLocationFilter = '';
+
+  // DOM elements
+  const minesGrid = document.getElementById('minesGrid');
+  const searchInput = document.getElementById('searchInput');
+  const locationFilter = document.getElementById('locationFilter');
+  const mineCountSpan = document.getElementById('mineCount');
+  const loggedOutButtons = document.getElementById('loggedOutButtons');
+  const loggedInInfo = document.getElementById('loggedInInfo');
+  const userEmailDisplay = document.getElementById('userEmailDisplay');
+
+  // Modals
+  const loginModal = document.getElementById('loginModal');
+  const registerModal = document.getElementById('registerModal');
+  const addMineModal = document.getElementById('addMineModal');
+
+  // Buttons
+  document.getElementById('loginBtn').addEventListener('click', () => loginModal.classList.add('open'));
+  document.getElementById('registerBtn').addEventListener('click', () => registerModal.classList.add('open'));
+  document.getElementById('addMineBtn').addEventListener('click', () => {
+    if (!currentUser) {
+      showToast('Please log in to list a mine', 'error');
+      loginModal.classList.add('open');
+      return;
+    }
+    addMineModal.classList.add('open');
+  });
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    currentUser = null;
+    updateAuthUI();
+    showToast('Logged out');
+  });
+  document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+    searchInput.value = '';
+    locationFilter.value = '';
+    activeLocationFilter = '';
+    applyFilters();
+  });
+
+  // Close modals
+  document.querySelectorAll('.close-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const modalId = e.target.dataset.modal;
+      document.getElementById(modalId).classList.remove('open');
+    });
+  });
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+      e.target.classList.remove('open');
+    }
+  });
+
+  // ---- AUTH ----
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim();
+    if (!email) return;
+    currentUser = { email };
+    updateAuthUI();
+    loginModal.classList.remove('open');
+    showToast('Logged in as ' + email);
+  });
+
+  document.getElementById('registerForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('registerEmail').value.trim();
+    const pass = document.getElementById('registerPassword').value;
+    if (!email || pass.length < 6) {
+      showToast('Password must be at least 6 characters', 'error');
+      return;
+    }
+    currentUser = { email };
+    updateAuthUI();
+    registerModal.classList.remove('open');
+    showToast('Account created! You are now logged in.');
+  });
+
+  function updateAuthUI() {
+    if (currentUser) {
+      loggedOutButtons.classList.remove('active');
+      loggedInInfo.classList.add('active');
+      userEmailDisplay.textContent = currentUser.email;
+    } else {
+      loggedOutButtons.classList.add('active');
+      loggedInInfo.classList.remove('active');
+    }
+  }
+
+  // ---- FETCH DATA FROM GOOGLE SHEETS via Apps Script ----
+  async function fetchMines() {
+    try {
+      const response = await fetch(`${API_URL}?action=getMines`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      // Expected array of mine objects
+      allMines = data.mines || data; 
+      if (!Array.isArray(allMines)) allMines = [];
+      // Normalize fields
+      allMines = allMines.map(m => ({
+        id: m.id || Date.now() + Math.random(),
+        name: m.name || m.title || 'Untitled mine',
+        location: m.location || m.area || 'Unknown',
+        price: m.price || m.sellingPrice || '—',
+        coords: m.coords || m.coordinates || '',
+        phone: m.phone || m.phoneNumber || '',
+        email: m.email || '',
+        whatsapp: m.whatsapp || '',
+        images: m.images ? (typeof m.images === 'string' ? m.images.split('\n').filter(u => u.trim()) : m.images) : [],
+        description: m.description || ''
+      }));
+      populateLocationFilter();
+      applyFilters();
+    } catch (error) {
+      console.error('Error loading mines:', error);
+      minesGrid.innerHTML = `<div class="empty-state"><i class="fas fa-exclamation-triangle" style="font-size:2rem;color:#d97706;margin-bottom:16px;"></i><p>Could not load mines. Please check the API URL and try again.</p></div>`;
+    }
+  }
+
+  function populateLocationFilter() {
+    const locations = [...new Set(allMines.map(m => m.location).filter(Boolean))].sort();
+    locationFilter.innerHTML = '<option value="">All locations</option>' +
+      locations.map(loc => `<option value="${escapeHtml(loc)}">${escapeHtml(loc)}</option>`).join('');
+  }
+
+  // ---- FILTERING ----
+  function applyFilters() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const locFilter = locationFilter.value;
+
+    filteredMines = allMines.filter(mine => {
+      const matchesSearch = !searchTerm || 
+        mine.name.toLowerCase().includes(searchTerm) ||
+        mine.location.toLowerCase().includes(searchTerm);
+      const matchesLocation = !locFilter || mine.location === locFilter;
+      return matchesSearch && matchesLocation;
+    });
+
+    renderMines();
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  locationFilter.addEventListener('change', applyFilters);
+
+  // ---- RENDER ----
+  function renderMines() {
+    if (!filteredMines.length) {
+      minesGrid.innerHTML = `<div class="empty-state">
+        <i class="fas fa-mountain" style="font-size:2.5rem;color:#bdd1e2;margin-bottom:16px;"></i>
+        <h3 style="margin-bottom:8px;">No mines found</h3>
+        <p style="color:#5e7a93;">Try adjusting your search or filters.</p>
+      </div>`;
+      mineCountSpan.textContent = '0 mines';
+      return;
+    }
+
+    minesGrid.innerHTML = filteredMines.map(mine => {
+      const coverImage = mine.images && mine.images.length ? mine.images[0] : 'https://placehold.co/600x400/e9eef2/1e3b4f?text=Mine+image';
+      const imageCount = mine.images ? mine.images.length : 0;
+      const priceDisplay = typeof mine.price === 'number' ? `$${mine.price.toLocaleString()}` : mine.price;
+      const whatsappLink = mine.whatsapp || `https://wa.me/${(mine.phone || '').replace(/[^0-9]/g, '')}`;
+
+      return `
+        <div class="mine-card" data-id="${mine.id}">
+          <div class="card-image">
+            <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(mine.name)}" loading="lazy" onerror="this.src='https://placehold.co/600x400/e9eef2/1e3b4f?text=Image+unavailable'">
+            ${imageCount > 1 ? `<span class="image-count"><i class="fas fa-images"></i> ${imageCount}</span>` : ''}
+          </div>
+          <div class="card-content">
+            <div class="mine-title">
+              <span>${escapeHtml(mine.name)}</span>
+              <span class="price">${escapeHtml(priceDisplay.toString())}</span>
+            </div>
+            <div class="location"><i class="fas fa-map-pin"></i> ${escapeHtml(mine.location)}</div>
+            ${mine.coords ? `<div class="coords"><i class="fas fa-location-dot"></i> ${escapeHtml(mine.coords)}</div>` : ''}
+            <div class="contact-info">
+              <a href="tel:${escapeHtml(mine.phone)}"><i class="fas fa-phone"></i> ${escapeHtml(mine.phone || '—')}</a>
+              <a href="mailto:${escapeHtml(mine.email)}"><i class="fas fa-envelope"></i> ${escapeHtml(mine.email || '—')}</a>
+              ${whatsappLink ? `<a href="${escapeHtml(whatsappLink)}" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    mineCountSpan.textContent = `${filteredMines.length} mine${filteredMines.length !== 1 ? 's' : ''}`;
+  }
+
+  // ---- SUBMIT NEW MINE ----
+  document.getElementById('addMineForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!currentUser) {
+      showToast('Please log in first', 'error');
+      return;
+    }
+
+    const name = document.getElementById('mineName').value.trim();
+    const location = document.getElementById('mineLocation').value.trim();
+    const price = document.getElementById('minePrice').value;
+    const coords = document.getElementById('mineCoords').value.trim();
+    const phone = document.getElementById('minePhone').value.trim();
+    const email = document.getElementById('mineEmail').value.trim();
+    const whatsapp = document.getElementById('mineWhatsapp').value.trim();
+    const imageLines = document.getElementById('mineImages').value.trim().split('\n').filter(u => u.trim());
+    const description = document.getElementById('mineDescription').value.trim();
+
+    if (imageLines.length > 5) {
+      showToast('You can upload up to 5 image URLs', 'error');
+      return;
+    }
+
+    const newMine = {
+      name, location, price, coords, phone, email, whatsapp,
+      images: imageLines, description,
+      seller: currentUser.email,
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'addMine', mine: newMine })
+      });
+      const result = await response.json();
+      if (result.success) {
+        showToast('Mine listed successfully!');
+        addMineModal.classList.remove('open');
+        document.getElementById('addMineForm').reset();
+        await fetchMines(); // reload
+      } else {
+        throw new Error(result.error || 'Unknown error');
+      }
+    } catch (error) {
+      console.error('Error adding mine:', error);
+      showToast('Error listing mine: ' + error.message, 'error');
+    }
+  });
+
+  // ---- UTILS ----
+  function showToast(msg, type = 'success') {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.style.background = type === 'error' ? '#b91c1c' : '#1e2b3c';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3200);
+  }
+
+  function escapeHtml(text) {
+    if (!text) return '';
+    return String(text).replace(/[&<>"]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      if (m === '"') return '&quot;';
+      return m;
+    });
+  }
+
+  // ---- INIT ----
+  (async function init() {
+    updateAuthUI();
+    await fetchMines();
+  })();
+
+</script>
+
+<!-- ============================================================
+  GOOGLE APPS SCRIPT (append to your script editor)
+  ------------------------------------------------------------
+  function doGet(e) {
+    const action = e.parameter.action;
+    if (action === 'getMines') {
+      return getMines();
+    }
+    return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function doPost(e) {
+    try {
+      const data = JSON.parse(e.postData.contents);
+      if (data.action === 'addMine') {
+        return addMine(data.mine);
+      }
+      return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      return ContentService.createTextOutput(JSON.stringify({ error: err.message }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  function getMines() {
+    const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getSheetByName('Mines');
+    const rows = sheet.getDataRange().getValues();
+    const headers = rows[0];
+    const mines = [];
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i];
+      const mine = {};
+      headers.forEach((header, index) => {
+        let value = row[index];
+        if (header === 'images' && typeof value === 'string') {
+          value = value.split('\n').filter(u => u.trim());
+        }
+        mine[header] = value;
+      });
+      mine.id = i; // row index as id
+      mines.push(mine);
+    }
+    return ContentService.createTextOutput(JSON.stringify({ mines }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function addMine(mine) {
+    const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getSheetByName('Mines');
+    const headers = sheet.getDataRange().getValues()[0];
+    
+    // Build row in header order
+    const row = headers.map(header => {
+      if (header === 'images') {
+        return Array.isArray(mine.images) ? mine.images.join('\n') : (mine.images || '');
+      }
+      return mine[header] || '';
+    });
+    
+    sheet.appendRow(row);
+    
+    return ContentService.createTextOutput(JSON.stringify({ success: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  // Note: Make sure your sheet has headers matching the field names:
+  // name, location, price, coords, phone, email, whatsapp, images, description, seller, timestamp
+  // And set the sheet ID in YOUR_SHEET_ID.
+  ============================================================ -->
 </body>
 </html>
